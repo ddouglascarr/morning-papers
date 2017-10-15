@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="${BASH_SOURCE%/*}"
 export NEWS_TMP_LOCATION="${NEWS_TMP_LOCATION:-/tmp}"
-export NEWS_RECIPE_LOCATION="${NEWS_RECIPE_LOCATION:-/opt/news-pi/recipes}"
+export NEWS_RECIPE_LOCATION="${NEWS_RECIPE_LOCATION:-/opt/morning-papers/recipes}"
 
 
 NEWS_RECIPE_NAME="theguardian" ${SCRIPT_DIR}/update-news-source
