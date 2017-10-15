@@ -1,16 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
-recipe_name=${NEWS_RECIPE_NAME}
-recipe_location=${NEWS_RECIPE_LOCATION}
-tmp_location=${NEWS_TMP_LOCATION}
+recipe_name=${MORNING_PAPERS_RECIPE_NAME}
+recipe_location=${MORNING_PAPERS_RECIPE_LOCATION}
+tmp_location=${MORNING_PAPERS_TMP_LOCATION}
 
-echo "--- Downloading ${NEWS_RECIPE_NAME} to Pi"
+echo "--- Downloading ${MORNING_PAPERS_RECIPE_NAME} to Pi"
 ebook-convert "${recipe_location}/${recipe_name}.recipe" "${tmp_location}/${recipe_name}.mobi"
 
-echo "--- Removing ${NEWS_RECIPE_NAME} from Kindle"
+echo "--- Removing ${MORNING_PAPERS_RECIPE_NAME} from Kindle"
 ebook-device rm "/documents/News/${recipe_name}.mobi"
 
-echo "--- Copying ${NEWS_RECIPE_NAME} to Kindle"
+echo "--- Copying ${MORNING_PAPERS_RECIPE_NAME} to Kindle"
 ebook-device cp -f "${tmp_location}/${recipe_name}.mobi" "dev:/documents/News/"
 
